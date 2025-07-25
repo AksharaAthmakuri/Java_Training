@@ -1,6 +1,5 @@
 
 public class Task52 {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		if(args.length>0)
@@ -11,14 +10,12 @@ public class Task52 {
 			{
 				rev+=input.charAt(i);
 			}
-			
 			System.out.println(" reversed:"+rev);
 		}
 		else
 		{
 			System.out.println("please provide as comdline arg");
 		}
-
 	}
 
 }
