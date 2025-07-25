@@ -1,4 +1,3 @@
-
 public class Task52 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,5 +16,4 @@ public class Task52 {
 			System.out.println("please provide as comdline arg");
 		}
 	}
-
 }
