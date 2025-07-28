@@ -1,32 +1,32 @@
 package multithreadingtask;
 class ChatBox {
-    boolean flag = false; // false means sender's turn, true means receiver's turn
+    boolean flag = false; 
     public synchronized void send(String msg) {
         while (flag) {
             try {
-                wait(); // wait if it's receiver's turn
+                wait(); 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         System.out.println("Sender: " + msg);
-        flag = true; // now it's receiver's turn
-        notify();    // wake up receiver
+        flag = true; 
+        notify();    
     }
     public synchronized void receive(String msg) {
         while (!flag) {
             try {
-                wait(); // wait if it's sender's turn
+                wait(); 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         System.out.println("Receiver: " + msg);
-        flag = false; // now it's sender's turn
-        notify();     // wake up sender
+        flag = false; 
+        notify();     
     }
 }
-// Sender thread
+
 class SenderTask implements Runnable {
     ChatBox chat;
     String[] messages = { "hi", "how are you?" };
@@ -40,7 +40,7 @@ class SenderTask implements Runnable {
         }
     }
 }
-// Receiver thread
+
 class ReceiverTask implements Runnable {
     ChatBox chat;
     String[] replies = { "hello", "I'm fine" };
@@ -54,7 +54,7 @@ class ReceiverTask implements Runnable {
         }
     }
 }
-// Main class to start the simulation
+
 public class Task10 {
     public static void main(String[] args) {
         ChatBox c = new ChatBox();
