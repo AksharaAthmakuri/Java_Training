@@ -1,5 +1,4 @@
 package multithreadingtask;
-import java.util.Random;
 class AnimalRunner implements Runnable {
     String name;
     public AnimalRunner(String name) {
