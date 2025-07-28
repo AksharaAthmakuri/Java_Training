@@ -2,7 +2,6 @@ package multithreadingtask;
 import java.util.Random;
 class AnimalRunner implements Runnable {
     String name;
-    Random rand = new Random();
     public AnimalRunner(String name) {
         this.name = name;
         new Thread(this, name).start();
